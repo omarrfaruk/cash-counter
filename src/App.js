@@ -1,9 +1,9 @@
-import './App.css';
+import './App.css'
 import Receipt from './components/Receipt';
 
 function App() {
   return (
-    <div >
+    <div>
       <Receipt />
     </div>
   );

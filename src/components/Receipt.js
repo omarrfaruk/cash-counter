@@ -13,13 +13,15 @@ const Receipt = () => {
             remark: e.target.remark.value
         }
 
-        setReceipt([...receipt, detailsReceipt])
+        setReceipt([detailsReceipt, ...receipt])
+        e.target.reset()
     }
 
     return (
         <>
-            <div className="container w-50 bg-danger">
+            <div className="container text-white w-50 mt-5 p-4 mb-4" style={{ backgroundColor: '#008B8B' }}>
                 <div className=''>
+                    <h3 className='pb-4'>Receipt Details</h3>
                     <form
                         onSubmit={handleSubmit}
                     >
@@ -53,14 +55,14 @@ const Receipt = () => {
                             <input type="text" className='px-5 py-1 border rounded' placeholder='Enter Remark' name="remark" id="remark" />
                         </div>
                         <div>
-                            <input className='btn btn-outline-dark px-5 m-2' type="submit" value="CANCEL" />
-                            <input className='btn btn-outline-dark px-5 ' type="submit" value="SUBMIT" />
+                            <input className='btn btn-outline-dark px-5 m-2' type="reset" value="CANCEL" />
+                            <input className='btn btn-outline-dark px-5 text-white' type="submit" value="SUBMIT" />
                         </div>
 
                     </form>
                 </div>
             </div>
-            <div>
+            <div className='container' >
                 <table class="table">
                     <thead>
                         <tr>
@@ -73,10 +75,10 @@ const Receipt = () => {
                     </thead>
                     <tbody>
                         {
-                            receipt?.map((r) => {
+                            receipt?.map((r, index) => {
                                 return (
 
-                                    <ShowReceipt r={r} />
+                                    <ShowReceipt index={index} r={r} />
                                 )
                             })
                         }
