@@ -3,7 +3,7 @@ import Receipt from './components/Receipt';
 
 function App() {
   return (
-    <div className="App">
+    <div >
       <Receipt />
     </div>
   );
